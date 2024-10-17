@@ -96,7 +96,7 @@ public class PaymentServiceTests
         var result = _rebateService.Calculate(request);
 
         // Assert
-        Assert.False(result.Success); // Product is null, so the calculation should fail
+        Assert.False(result.Success); 
         _rebateDataStoreMock.Verify(r => r.StoreCalculationResult(It.IsAny<Rebate>(), It.IsAny<decimal>()), Times.Never); // StoreCalculationResult should not be called
     }
 
