@@ -1,26 +1,16 @@
-# Smartwyre Developer Test Instructions
+Description:
+This project implements a Rebate Calculation Service using SOLID principles and clean architecture to ensure scalability, testability, and maintainability. The service calculates rebates based on various incentive types, allowing easy extension for future incentive types. The project includes unit tests to ensure correctness and follows best practices for dependency injection and separation of concerns.
 
-In the 'RebateService.cs' file you will find a method for calculating a rebate. At a high level the steps for calculating a rebate are:
-
- 1. Lookup the rebate that the request is being made against.
- 2. Lookup the product that the request is being made against.
- 2. Check that the rebate and request are valid to calculate the incentive type rebate.
- 3. Store the rebate calculation.
-
-What we'd like you to do is refactor the code with the following things in mind:
-
- - Adherence to SOLID principles
- - Testability
- - Readability
- - Currently there are 3 known incentive types. In the future the business will want to add many more incentive types. Your solution should make it easy for developers to add new incentive types in the future.
-
-We’d also like you to 
- - Add some unit tests to the Smartwyre.DeveloperTest.Tests project to show how you would test the code that you’ve produced 
- - Run the RebateService from the Smartwyre.DeveloperTest.Runner console application accepting inputs
-
-The only specific 'rules' are:
-
-- The solution should build
-- The tests should all pass
-
-You are free to use any frameworks/NuGet packages that you see fit. You should plan to spend around 1 hour completing the exercise.
+Key Features:
+Rebate Calculation: Supports different incentive types including:
+Fixed Cash Amount
+Fixed Rate Rebate
+Amount Per Unit of Measure (UoM)
+SOLID Principles: The service is designed to adhere to SOLID principles, ensuring the system is open for extension but closed for modification.
+Extensible Design: New incentive types can be added easily without modifying the existing codebase, thanks to the use of interfaces and the strategy pattern.
+Unit Testing: Comprehensive unit tests using Moq and xUnit to verify the behavior of the rebate calculation in various scenarios, including success and failure cases.
+Technologies:
+C# (.NET Core)
+Autofac: For dependency injection.
+xUnit: For unit testing.
+Moq: For mocking dependencies in unit tests.
